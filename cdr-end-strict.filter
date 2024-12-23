@@ -10,6 +10,25 @@
 # https://discord.gg/zFEx92a
 #===============================================================================================================
 
+Show
+	BaseType "Attuned Wand" "Siphoning Wand"
+	Rarity Normal
+	SetFontSize 25
+	SetTextColor 255 0 0 255
+	MinimapIcon 1 Red Star
+	PlayEffect Orange
+	PlayAlertSound 6 300
+	ItemLevel >= 81
+
+Hide
+	Class "Waystones"
+	WaystoneTier <= 12
+	AreaLevel >= 79
+
+Hide
+	Class "Inscribed Ultimatum" "Trial Coins"
+	AreaLevel >= 77
+
 #===============================================================================================================
 # [WELCOME] TABLE OF CONTENTS + QUICKJUMP TABLE
 #===============================================================================================================
