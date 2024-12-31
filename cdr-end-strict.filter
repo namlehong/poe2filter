@@ -1,5 +1,5 @@
 #===============================================================================================================
-# cdr's PoE2 endgame STRICT loot filter v0.2.2
+# cdr's PoE2 endgame STRICT loot filter v0.2.3
 # https://github.com/cdrg/cdr-poe2filter
 # https://ko-fi.com/cdrkf
 #
@@ -165,16 +165,27 @@ Show
 #   [1006] Relics (Trial of the Sekhemas aka Sanctum)
 #------------------------------------
 
-Show 
+# Hide # GGG will not allow you to hide relics, uncomment this rule if you want to "hide" them via making them transparent
+# 	Class == "Relics"
+# 	BaseType == "Urn Relic" "Amphora Relic" "Vase Relic" "Seal Relic" "Coffer Relic" "Tapestry Relic" "Incense Relic"
+# 	Rarity <= Magic
+# 	SetFontSize 18
+# 	SetTextColor 0 0 0 0
+# 	SetBorderColor 0 0 0 0
+# 	SetBackgroundColor 0 0 0 0
+# 	DisableDropSound True
+
+Show
 	Class == "Relics"
 	BaseType == "Urn Relic" "Amphora Relic" "Vase Relic" "Seal Relic" "Coffer Relic" "Tapestry Relic" "Incense Relic"
+	Rarity <= Magic
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 20 20 0 255
-	PlayAlertSound 3 300
+	PlayAlertSound 2 300
 	PlayEffect Blue
-	MinimapIcon 1 Blue Diamond
+	MinimapIcon 2 Blue Diamond
 
 #===============================================================================================================
 # [[1300]] High Level Crafting Bases
@@ -213,7 +224,7 @@ Show # raredecoratorgear
 	Corrupted False
 	ItemLevel >= 65
 	Rarity Rare
-	Class == "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	Class == "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	SetFontSize 45
 	SetBackgroundColor 20 20 0 255
 	Continue
@@ -243,7 +254,7 @@ Show # normaldecorator
 	Corrupted False
 	ItemLevel >= 65
 	Rarity Normal Magic
-	Class == "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	Class == "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	SetBorderColor 100 100 100 150
 	SetBackgroundColor 20 20 0 180
 	Continue
@@ -264,7 +275,7 @@ Show #T1 Charms
 	PlayEffect Red
 	MinimapIcon 0 Red Diamond
 
-# Show # T2
+# Show # T2 Charms
 # 	Mirrored False
 # 	Corrupted False
 # 	ItemLevel >= 83
@@ -273,7 +284,7 @@ Show #T1 Charms
 # 	SetFontSize 40
 # 	SetBorderColor 255 30 0 160
 
-# Show # T3
+# Show # T3 Charms
 # 	Mirrored False
 # 	Corrupted False
 # 	ItemLevel >= 83
@@ -286,111 +297,136 @@ Show #T1 Jewellery
 	Corrupted False
 	ItemLevel >= 82
 	Rarity Normal Magic
-	BaseType == "Bloodstone Amulet" "Solar Amulet" "Lunar Amulet" "Amber Amulet" "Jade Amulet" "Lapis Amulet" "Stellar Amulet" "Ruby Ring" "Sapphire Ring" "Topaz Ring" "Amethyst Ring" "Prismatic Ring" "Pearl Ring" "Rawhide Belt" "Utility Belt" "Golden Charm" "Stone Charm" "Thawing Charm" "Dousing Charm" "Antidote Charm"
+	BaseType == "Bloodstone Amulet" "Solar Amulet" "Lunar Amulet" "Amber Amulet" "Jade Amulet" "Lapis Amulet" "Stellar Amulet" "Ruby Ring" "Sapphire Ring" "Topaz Ring" "Amethyst Ring" "Prismatic Ring" "Pearl Ring" "Rawhide Belt" "Utility Belt"
 	SetFontSize 45
 	SetBorderColor 255 125 0 160
 
-# Show # T2
-	# Mirrored False
-	# Corrupted False
-	# ItemLevel >= 82
-	# Rarity Normal Magic
-	# BaseType == "Gold Amulet" "Unset Ring" "Gold Ring" "Linen Belt" "Plate Belt" "Mail Belt" "Heavy Belt" "Amethyst Charm" "Silver Charm" "Grounding Charm"
-	# SetBorderColor 255 125 0 160
-
-# Show # T3
-	# Mirrored False
-	# Corrupted False
-	# ItemLevel >= 82
-	# Rarity Normal Magic
-	# BaseType == "Crimson Amulet" "Azure Amulet" "Iron Ring" "Lazuli Ring" "Emerald Ring" "Wide Belt" "Long Belt" "Ornate Belt" "Double Belt" "Staunching Charm" "Ruby Charm" "Sapphire Charm" "Topaz Charm"
-	# SetBorderColor 255 125 0 160
-
-# Show #T1 Armour
-	# Mirrored False
-	# Corrupted False
-	# ItemLevel >= 82
-	# Rarity Normal Magic
-	# BaseType == "Expert Intricate Gloves" "Expert Spined Bracers" "Expert Moulded Mitts" "Expert Spiral Wraps" "Expert Feathered Sandals" "Expert Lizardscale Boots" "Expert Stone Greaves" "Expert Hunting Shoes" "Expert Hexer's Robe" "Expert Studded Vest" "Expert Waxed Jacket" "Expert Wayfarer Jacket" "Expert Iron Cuirass" "Expert Scalper's Jacket" "Expert Feathered Tiara" "Expert Hunter Hood" "Expert Elite Greathelm" "Expert Tribal Mask" "Expert Omen Crest Shield" "Expert Stone Tower Shield" "Expert Crystal Focus" "Expert Plumed Focus"
-	# SetFontSize 40
-	# SetBorderColor 255 125 0 160
-	# PlayEffect Blue
-	# MinimapIcon 0 Blue Diamond
-
-# Show # T2
-	# Mirrored False
-	# Corrupted False
-	# ItemLevel >= 82
-	# Rarity Normal Magic
-	# BaseType == "Expert Moulded Mitts" "Expert Doubled Gauntlets" "Expert Goldcast Cuffs" "Expert Pelt Leggings" "Expert Stone Greaves" "Expert Stacked Sabatons" "Expert Keth Raiment" "Expert Altar Robe" "Expert Vaal Cuirass" "Expert Serpentscale Coat" "Expert Scale Mail" "Expert Shaman Mantle" "Expert Sacrificial Mantle" "Expert Elite Greathelm" "Expert Shielded Helm" "Expert Heavy Crown" "Expert Stone Tower Shield" "Expert Feathered Targe" "Expert Edged Buckler"
-	# SetBorderColor 255 125 0 160
-
-# Show #T1 1H Weapons
-	# Mirrored False
-	# Corrupted False
-	# ItemLevel >= 82
-	# Rarity Normal Magic
-	# BaseType == "Expert Brigand Mace"
-	# SetFontSize 40
-	# SetBorderColor 255 125 0 160
-	# PlayEffect Blue
-	# MinimapIcon 0 Blue Diamond
-
-# Show # T2
-	# Mirrored False
-	# Corrupted False
-	# ItemLevel >= 82
-	# Rarity Normal Magic
-	# BaseType == "Expert Construct Hammer"
-	# SetBorderColor 255 125 0 160
-
-# Show # T3
-	# Mirrored False
-	# Corrupted False
-	# ItemLevel >= 82
-	# Rarity Normal Magic
-	# BaseType == "Talon Claw" "Bloodletting Dagger" "Mail Breaker" "Kris Knife" "Cinquedea" "Runic Shortsword" "Messer" "Commander Sword" "Dark Blade" "Sacrificial Axe" "Boarding Hatchet" "Fury Cleaver" "Dread Hatchet" "Expert Slim Mace" "Expert Smithing Hammer" "Expert Warpick" "Helix Spear" "Striking Spear" "Icicle Flail" "Great Flail" "Abyssal Flail"
-	# SetBorderColor 255 125 0 160
-
-# Show #T1 2H Weapons
-	# Mirrored False
-	# Corrupted False
-	# ItemLevel >= 82
-	# Rarity Normal Magic
-	# BaseType == "Expert Dualstring Bow" "Expert Forlorn Crossbow" "Expert Slicing Quarterstaff"
-	# SetFontSize 40
-	# SetBorderColor 255 125 0 160
-	# PlayEffect Blue
-	# MinimapIcon 0 Blue Diamond
-
-# Show # T2
-	# Mirrored False
-	# Corrupted False
-	# ItemLevel >= 82
-	# Rarity Normal Magic
-	# BaseType == "Expert Warden Bow"  "Expert Bombard Crossbow" "Expert Barrier Quarterstaff" "Expert Gothic Quarterstaff"
-	# SetBorderColor 255 125 0 160
-
-# Show # T3
-	# Mirrored False
-	# Corrupted False
-	# ItemLevel >= 82
-	# Rarity Normal Magic
-	# BaseType == "Expert Shortbow" "Expert Cultist Bow" "Regalia Longsword" "Ultra Greatsword" "Vile Greataxe" "Expert Temple Maul" "Expert Oak Greathammer" "Expert Cultist Greathammer" "Expert Crumbling Maul" "Expert Leaden Greathammer" "Expert Crescent Quarterstaff" "Expert Long Quarterstaff" "Expert Crackling Quarterstaff" "Expert Dyad Crossbow"
-	# SetBorderColor 255 125 0 160
-
-# Show #T1 Wands/Staves
+# Show # T2 Jewellery
 # 	Mirrored False
 # 	Corrupted False
-# 	ItemLevel >= 81
+# 	ItemLevel >= 82
 # 	Rarity Normal Magic
-# 	BaseType == "Chiming Staff" "Attuned Wand" "Siphoning Wand"
+# 	BaseType == "Gold Amulet" "Unset Ring" "Gold Ring" "Linen Belt" "Plate Belt" "Mail Belt" "Heavy Belt"
+# 	SetBorderColor 255 125 0 160
+
+# Show # T3 Jewellery
+# 	Mirrored False
+# 	Corrupted False
+# 	ItemLevel >= 82
+# 	Rarity Normal Magic
+# 	BaseType == "Crimson Amulet" "Azure Amulet" "Iron Ring" "Lazuli Ring" "Emerald Ring" "Wide Belt" "Long Belt" "Ornate Belt" "Double Belt"
+# 	SetBorderColor 255 125 0 160
+
+# Show #T1 Armour
+# 	Mirrored False
+# 	Corrupted False
+# 	ItemLevel >= 82
+# 	Rarity Normal Magic
+# 	BaseType == "Expert Intricate Gloves" "Expert Spined Bracers" "Expert Moulded Mitts" "Expert Spiral Wraps" "Expert Feathered Sandals" "Expert Lizardscale Boots" "Expert Stone Greaves" "Expert Hunting Shoes" "Expert Hexer's Robe" "Expert Studded Vest" "Expert Waxed Jacket" "Expert Wayfarer Jacket" "Expert Iron Cuirass" "Expert Scalper's Jacket" "Expert Feathered Tiara" "Expert Hunter Hood" "Expert Elite Greathelm" "Expert Tribal Mask" "Expert Omen Crest Shield" "Expert Stone Tower Shield" "Expert Crystal Focus" "Expert Plumed Focus"
 # 	SetFontSize 40
 # 	SetBorderColor 255 125 0 160
 # 	PlayEffect Blue
 # 	MinimapIcon 0 Blue Diamond
 
-# Show # T2
+# Show # T2 Armour
+# 	Mirrored False
+# 	Corrupted False
+# 	ItemLevel >= 82
+# 	Rarity Normal Magic
+# 	BaseType == "Expert Moulded Mitts" "Expert Doubled Gauntlets" "Expert Goldcast Cuffs" "Expert Pelt Leggings" "Expert Stone Greaves" "Expert Stacked Sabatons" "Expert Keth Raiment" "Expert Altar Robe" "Expert Vaal Cuirass" "Expert Serpentscale Coat" "Expert Scale Mail" "Expert Shaman Mantle" "Expert Sacrificial Mantle" "Expert Elite Greathelm" "Expert Shielded Helm" "Expert Heavy Crown" "Expert Stone Tower Shield" "Expert Feathered Targe" "Expert Edged Buckler"
+# 	SetBorderColor 255 125 0 160
+
+# Show #T1 1H Weapons
+# 	Mirrored False
+# 	Corrupted False
+# 	ItemLevel >= 82
+# 	Rarity Normal Magic
+# 	BaseType == "Expert Brigand Mace"
+# 	SetFontSize 40
+# 	SetBorderColor 255 125 0 160
+# 	PlayEffect Blue
+# 	MinimapIcon 0 Blue Diamond
+
+# Show # T2 1H Weapons
+# 	Mirrored False
+# 	Corrupted False
+# 	ItemLevel >= 82
+# 	Rarity Normal Magic
+# 	BaseType == "Expert Construct Hammer"
+# 	SetBorderColor 255 125 0 160
+
+# Show # T3 1H Weapons
+# 	Mirrored False
+# 	Corrupted False
+# 	ItemLevel >= 82
+# 	Rarity Normal Magic
+# 	BaseType == "Talon Claw" "Bloodletting Dagger" "Mail Breaker" "Kris Knife" "Cinquedea" "Runic Shortsword" "Messer" "Commander Sword" "Dark Blade" "Sacrificial Axe" "Boarding Hatchet" "Fury Cleaver" "Dread Hatchet" "Expert Slim Mace" "Expert Smithing Hammer" "Expert Warpick" "Helix Spear" "Striking Spear" "Icicle Flail" "Great Flail" "Abyssal Flail"
+# 	SetBorderColor 255 125 0 160
+
+# Show #T1 2H Weapons
+# 	Mirrored False
+# 	Corrupted False
+# 	ItemLevel >= 82
+# 	Rarity Normal Magic
+# 	BaseType == "Expert Dualstring Bow" "Expert Forlorn Crossbow" "Expert Slicing Quarterstaff"
+# 	SetFontSize 40
+# 	SetBorderColor 255 125 0 160
+# 	PlayEffect Blue
+# 	MinimapIcon 0 Blue Diamond
+
+# Show # T2 2H Weapons
+# 	Mirrored False
+# 	Corrupted False
+# 	ItemLevel >= 82
+# 	Rarity Normal Magic
+# 	BaseType == "Expert Warden Bow"  "Expert Bombard Crossbow" "Expert Barrier Quarterstaff" "Expert Gothic Quarterstaff"
+# 	SetBorderColor 255 125 0 160
+
+# Show # T3 2H Weapons
+# 	Mirrored False
+# 	Corrupted False
+# 	ItemLevel >= 82
+# 	Rarity Normal Magic
+# 	BaseType == "Expert Shortbow" "Expert Cultist Bow" "Regalia Longsword" "Ultra Greatsword" "Vile Greataxe" "Expert Temple Maul" "Expert Oak Greathammer" "Expert Cultist Greathammer" "Expert Crumbling Maul" "Expert Leaden Greathammer" "Expert Crescent Quarterstaff" "Expert Long Quarterstaff" "Expert Crackling Quarterstaff" "Expert Dyad Crossbow"
+# 	SetBorderColor 255 125 0 160
+
+Show #T1 Wands
+	Mirrored False
+	Corrupted False
+	ItemLevel >= 81
+	Rarity Normal
+	BaseType == "Attuned Wand" "Siphoning Wand"
+	SetFontSize 45
+	SetBorderColor 255 125 0 160
+
+# Show # T2 Wands
+# 	Mirrored False
+# 	Corrupted False
+# 	ItemLevel >= 81
+# 	Rarity Normal Magic
+# 	BaseType == "Bone Wand"
+# 	SetBorderColor 255 125 0 160
+
+# Show # T3 Wands
+# 	Mirrored False
+# 	Corrupted False
+# 	ItemLevel >= 81
+# 	Rarity Normal Magic
+# 	BaseType == "Withered Wand" "Volatile Wand"
+# 	SetBorderColor 255 125 0 160
+
+# Show #T1 Staves
+# 	Mirrored False
+# 	Corrupted False
+# 	ItemLevel >= 81
+# 	Rarity Normal Magic
+# 	BaseType == "Chiming Staff"
+# 	SetFontSize 40
+# 	SetBorderColor 255 125 0 160
+# 	PlayEffect Blue
+# 	MinimapIcon 0 Blue Diamond
+
+# Show # T2 Staves
 # 	Mirrored False
 # 	Corrupted False
 # 	ItemLevel >= 81
@@ -398,12 +434,12 @@ Show #T1 Jewellery
 # 	BaseType == "Gelid Staff"
 # 	SetBorderColor 255 125 0 160
 
-# Show # T3
+# Show # T3 Staves
 # 	Mirrored False
 # 	Corrupted False
 # 	ItemLevel >= 81
 # 	Rarity Normal Magic
-# 	BaseType == "Withered Wand" "Bone Wand" "Volatile Wand" "Galvanic Wand" "Acrid Wand" "Offering Wand" "Frigid Wand" "Torture Wand" "Critical Wand" "Primordial Wand" "Dueling Wand" "Ashen Staff" "Voltaic Staff" "Spriggan Staff" "Pyrophyte Staff" "Rending Staff" "Reaping Staff" "Icicle Staff" "Roaring Staff" "Paralysing Staff" "Cleric Staff" "Dark Staff"
+# 	BaseType == "Ashen Staff" "Voltaic Staff" "Pyrophyte Staff"
 # 	SetBorderColor 255 125 0 160
 
 # Show #T1 Sceptres
@@ -417,7 +453,7 @@ Show #T1 Jewellery
 # 	PlayEffect Blue
 # 	MinimapIcon 0 Blue Diamond
 
-# Show # T2
+# Show # T2 Sceptres
 # 	Mirrored False
 # 	Corrupted False
 # 	ItemLevel >= 82
@@ -425,7 +461,7 @@ Show #T1 Jewellery
 # 	BaseType == "Omen Sceptre"
 # 	SetBorderColor 255 125 0 160
 
-# Show # T3
+# Show # T3 Sceptres
 # 	Mirrored False
 # 	Corrupted False
 # 	ItemLevel >= 82
@@ -433,38 +469,38 @@ Show #T1 Jewellery
 # 	BaseType == "Stoic Sceptre" "Lupine Sceptre" "Ochre Sceptre" "Shrine Sceptre" "Devouring Sceptre" "Clasped Sceptre" "Devotional Sceptre" "Wrath Sceptre" "Aromatic Sceptre" "Pious Sceptre" "Hallowed Sceptre"
 # 	SetBorderColor 255 125 0 160
 
-# Show #T1 Offhand
-	# Mirrored False
-	# Corrupted False
-	# ItemLevel >= 82
-	# Rarity Normal Magic
-	# BaseType == "Primed Quiver"
-	# SetFontSize 40
-	# SetBorderColor 255 125 0 160
-	# PlayEffect Blue
-	# MinimapIcon 0 Blue Diamond
+# Show #T1 Quivers
+# 	Mirrored False
+# 	Corrupted False
+# 	ItemLevel >= 82
+# 	Rarity Normal Magic
+# 	BaseType == "Primed Quiver"
+# 	SetFontSize 40
+# 	SetBorderColor 255 125 0 160
+# 	PlayEffect Blue
+# 	MinimapIcon 0 Blue Diamond
 
-# Show # T2
-	# Mirrored False
-	# Corrupted False
-	# ItemLevel >= 82
-	# Rarity Normal Magic
-	# BaseType == "Two-Point Quiver" "Volant Quiver" "Visceral Quiver" "Penetrating Quiver"
-	# SetBorderColor 255 125 0 160
+# Show # T2 Quivers
+# 	Mirrored False
+# 	Corrupted False
+# 	ItemLevel >= 82
+# 	Rarity Normal Magic
+# 	BaseType == "Two-Point Quiver" "Volant Quiver" "Visceral Quiver" "Penetrating Quiver"
+# 	SetBorderColor 255 125 0 160
 
-# Show # T3
-	# Mirrored False
-	# Corrupted False
-	# ItemLevel >= 82
-	# Rarity Normal Magic
-	# BaseType == "Broadhead Quiver" "Fire Quiver" "Sacral Quiver" "Blunt Quiver" "Toxic Quiver" "Serrated Quiver"
-	# SetBorderColor 255 125 0 160
+# Show # T3 Quivers
+# 	Mirrored False
+# 	Corrupted False
+# 	ItemLevel >= 82
+# 	Rarity Normal Magic
+# 	BaseType == "Broadhead Quiver" "Fire Quiver" "Sacral Quiver" "Blunt Quiver" "Toxic Quiver" "Serrated Quiver"
+# 	SetBorderColor 255 125 0 160
 
 #------------------------------------
 #   [1305] ILVL 80
 #------------------------------------
 
-# Show # T1
+# Show # T1 bases i80+
 	# Mirrored False
 	# Corrupted False
 	# ItemLevel >= 80
@@ -477,7 +513,7 @@ Show #T1 Jewellery
 #   [1306] ILVL ANY
 #------------------------------------
 
-# Show # T1
+# Show # T1 bases any ilvl
 	# Mirrored False
 	# Corrupted False
 	# ItemLevel <= 79
@@ -496,7 +532,7 @@ Show # raredecoratorremover
 	Corrupted False
 	ItemLevel >= 65
 	Rarity Rare
-	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	SetFontSize 32
 	SetTextColor 255 255 119
 	SetBorderColor 0 0 0 255
@@ -508,7 +544,7 @@ Show # magicdecoratorremover
 	Corrupted False
 	ItemLevel >= 65
 	Rarity Magic
-	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	SetFontSize 32
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 20 20 0 240
@@ -519,7 +555,7 @@ Show # normaldecoratorremover
 	Corrupted False
 	ItemLevel >= 65
 	Rarity Normal
-	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	SetFontSize 32
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 20 20 0 240
@@ -597,7 +633,7 @@ Show # %D1 $type->chancing $tier->hh
 
 # Show # Blacksmith's Whetstones
 	# Height <= 3
-	# Class == "Bows" "Claws" "Daggers" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Spears" "Flails" "Bows" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps"
+	# Class == "Bows" "Claws" "Daggers" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Spears" "Flails"  "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps"
 	# Quality >= 10
 	# Rarity Magic
 	# Rarity Normal Magic
@@ -658,7 +694,7 @@ Show # High Quality
 
 Hide
 	Rarity Normal Magic
-	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	AreaLevel >= 65
 	SetFontSize 18
 	SetBorderColor 0 0 0 0
@@ -675,7 +711,7 @@ Show # largerares
 	Height >= 3
 	ItemLevel >= 65
 	Rarity Rare
-	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	SetBorderColor 0 0 0 255
 	Continue
 
@@ -684,7 +720,7 @@ Show # mediumrares1
 	Height >= 3
 	ItemLevel >= 65
 	Rarity Rare
-	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	SetBorderColor 180 180 180 255
 	Continue
 
@@ -693,7 +729,7 @@ Show # mediumrares2
 	Height 2
 	ItemLevel >= 65
 	Rarity Rare
-	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	SetBorderColor 180 180 180 255
 	Continue
 
@@ -702,34 +738,34 @@ Show # tinyrares
 	Height 1
 	ItemLevel >= 65
 	Rarity Rare
-	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	SetBorderColor 50 200 50 255
 	Continue
 
 Show # ilvl65
 	ItemLevel >= 65
 	Rarity Rare
-	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	Continue
 
 Show # ilvl72
 	ItemLevel >= 72
 	Rarity Rare
-	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	SetTextColor 245 190 0 255
 	Continue
 
 Show # ilvl80
 	ItemLevel >= 80
 	Rarity Rare
-	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	SetTextColor 250 165 0 255
 	Continue
 
 Show # ilvl82
 	ItemLevel >= 82
 	Rarity Rare
-	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	SetTextColor 255 140 0 255
 	Continue
 
@@ -738,7 +774,7 @@ Show # $tier->corruptedrares
 	AnyEnchantment False
 	ItemLevel >= 65
 	Rarity Rare
-	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	SetBorderColor 120 0 0 240
 	Continue
 
@@ -747,7 +783,7 @@ Show # corruptedraresimplicit
 	AnyEnchantment True
 	ItemLevel >= 65
 	Rarity Rare
-	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	SetBorderColor 250 0 0 255
 	Continue
 
@@ -844,7 +880,7 @@ Show # t1
 	# Identified True
 	# ItemLevel >= 65
 	# Rarity Rare
-	# Class == "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	# Class == "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	# SetFontSize 40
 	# SetBorderColor 0 240 190 180
 	# PlayEffect Blue Temp
@@ -852,7 +888,7 @@ Show # t1
 # Show # remaining t2-t3-t4
 	# ItemLevel >= 65
 	# Rarity Rare
-	# Class == "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	# Class == "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	# SetFontSize 35
 	# SetBackgroundColor 80 80 80 100
 	
@@ -863,7 +899,7 @@ Show # t1
 Hide # raresendgame
 	ItemLevel >= 65
 	Rarity Rare
-	Class "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Bows" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
+	Class == "Amulets" "Rings" "Belts" "Charms" "Body Armours" "Boots" "Gloves" "Helmets" "Claws" "Daggers" "Wands" "One Hand Swords" "One Hand Axes" "One Hand Maces" "Sceptres" "Spears" "Flails" "Bows" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Quarterstaves" "Crossbows" "Traps" "Quivers" "Shields" "Foci"
 	SetFontSize 18
 	SetBorderColor 0 0 0 0
 	SetBackgroundColor 20 20 0 0
@@ -1260,6 +1296,7 @@ Show # %D4 $type->Waystones $tier->deco_waystoneup_t11
 	Class == "Waystones"
 	AreaLevel < 75
 	SetBorderColor 220 50 0 255
+	Continue
 
 Show # %D3 $type->Waystones $tier->deco_waystoneup_t10
 	WaystoneTier >= 10
@@ -1535,7 +1572,7 @@ Show # expedition logbook
 #   [3301] Exceptions
 #------------------------------------
 
-Show # pinnacle keys, basetypes are bugged
+Show # Pinnacle keys, basetypes are bugged
 	Class == "Pinnacle Keys"
 	#BaseType == "Ancient Crisis Fragment" "Faded Crisis Fragment" "Weathered Crisis Fragment"
 	SetFontSize 45
@@ -1555,11 +1592,12 @@ Show # Trial Coins special
 	SetBackgroundColor 255 255 255 255
 	PlayAlertSound 6 300
 	PlayEffect Red
-	MinimapIcon 0 Red Star
+	MinimapIcon 0 Red Hexagon
 
 Hide # Djinn Barya 4 trials i80
 	Class == "Trial Coins"
 	BaseType == "Djinn Barya"
+	Rarity == Normal
 	ItemLevel >= 80
 	SetFontSize 45
 	SetTextColor 0 0 0 255
@@ -1567,11 +1605,12 @@ Hide # Djinn Barya 4 trials i80
 	SetBackgroundColor 249 150 25 255
 	# PlayAlertSound 2 300
 	# PlayEffect Yellow
-	# MinimapIcon 2 Yellow Circle
+	# MinimapIcon 2 Yellow Hexagon
 
 Hide # Djinn Barya 4 trials (4th ascension)
 	Class == "Trial Coins"
 	BaseType == "Djinn Barya"
+	Rarity == Normal
 	AreaLevel <= 78
 	ItemLevel >= 75
 	SetFontSize 45
@@ -1582,14 +1621,28 @@ Hide # Djinn Barya 4 trials (4th ascension)
 Hide # Djinn Barya any
 	Class == "Trial Coins"
 	BaseType == "Djinn Barya"
+	Rarity == Normal
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 210 178 135 255
 
+Show # Trialmaster Inscribed Ultimatiums
+	Class == "Inscribed Ultimatum"
+	BaseType == "Inscribed Ultimatum"
+	Rarity == Magic
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 255 0 0
+	SetBackgroundColor 229 126 88
+	PlayAlertSound 2 300
+	PlayEffect Yellow
+	MinimapIcon 1 Yellow Hexagon
+
 Hide # Inscribed Ultimatum 10 trials i80
 	Class == "Inscribed Ultimatum"
 	BaseType == "Inscribed Ultimatum"
+	Rarity == Normal
 	ItemLevel >= 80
 	SetFontSize 45
 	SetTextColor 0 0 0 255
@@ -1597,11 +1650,12 @@ Hide # Inscribed Ultimatum 10 trials i80
 	SetBackgroundColor 249 150 25 255
 	# PlayAlertSound 2 300
 	# PlayEffect Yellow
-	# MinimapIcon 2 Yellow Circle
+	# MinimapIcon 2 Yellow Hexagon
 
 Hide # Inscribed Ultimatum 10 trials (4th ascension)
 	Class == "Inscribed Ultimatum"
 	BaseType == "Inscribed Ultimatum"
+	Rarity == Normal
 	AreaLevel <= 79
 	ItemLevel >= 75
 	SetFontSize 45
@@ -1612,6 +1666,7 @@ Hide # Inscribed Ultimatum 10 trials (4th ascension)
 Hide # Inscribed Ultimatum any
 	Class == "Inscribed Ultimatum"
 	BaseType == "Inscribed Ultimatum"
+	Rarity == Normal
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -1784,9 +1839,9 @@ Show #  $type->currency->stacked $tier->t5
 	StackSize >= 2
 	Class == "Stackable Currency"
 	BaseType == "Scroll of Wisdom" "Transmutation Shard"
-	SetFontSize 36
+	SetFontSize 35
 	SetTextColor 0 0 0 255
-	SetBorderColor 0 0 0 255
+	SetBorderColor 100 50 30 220
 
 #===============================================================================================================
 # [[3600]] Currency - Regular Currency Tiering
@@ -2097,7 +2152,7 @@ Show # $type->keys $tier->restex
 
 Show # %HS3 $type->currency->catalyst $tier->t5
 	Class == "Stackable Currency"
-	BaseType == "Adaptive Catalyst" "Neural Catalyst" "Tul's Catalyst" "Esh's Catalyst" "Reaver Catalyst" "Chayula's Catalyst"
+	BaseType == "Adaptive Catalyst" "Neural Catalyst" "Tul's Catalyst" "Esh's Catalyst" "Reaver Catalyst"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -2108,7 +2163,7 @@ Show # %HS3 $type->currency->catalyst $tier->t5
 
 Show # %HS3 $type->currency->catalyst $tier->t6
 	Class == "Stackable Currency"
-	BaseType == "Skittering Catalyst" "Uul-Netol's Catalyst"
+	BaseType == "Chayula's Catalyst"
 	SetFontSize 40
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -2116,21 +2171,21 @@ Show # %HS3 $type->currency->catalyst $tier->t6
 	PlayEffect Grey
 	MinimapIcon 2 Grey Circle
 
-Show # %HS2 $type->currency->catalyst $tier->t7
+Hide # %HS2 $type->currency->catalyst $tier->t7
 	Class == "Stackable Currency"
-	BaseType ==  "Flesh Catalyst" "Carapace Catalyst" "Sibilant Catalyst"  "Xoph's Catalyst"
+	BaseType == "Skittering Catalyst" "Sibilant Catalyst" "Uul-Netol's Catalyst"
 	SetFontSize 35
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 210 178 135 255
 
-# Hide # %H2 $type->currency->catalyst $tier->t8
-# 	Class == "Stackable Currency"
-# 	BaseType == 
-# 	SetFontSize 40
-# 	SetTextColor 190 178 135 255
-# 	SetBorderColor 190 178 135 255
-# 	SetBackgroundColor 20 20 0 255
+Hide # %H2 $type->currency->catalyst $tier->t8
+	Class == "Stackable Currency"
+	BaseType == "Flesh Catalyst" "Carapace Catalyst" "Xoph's Catalyst"
+	SetFontSize 35
+	SetTextColor 190 178 135 255
+	SetBorderColor 190 178 135 255
+	SetBackgroundColor 20 20 0 255
 
 # Hide # $type->currency->catalyst $tier->exhide
 # 	Class == "Stackable Currency"
@@ -2589,6 +2644,7 @@ Hide # %H3 $type->uniques $tier->hideable2
 	SetTextColor 175 96 37 255
 	SetBorderColor 175 96 37 255
 	SetBackgroundColor 20 20 0 255
+	DisableDropSound True
 
 # D Grade Low: Worthless uniques, low drop rarity tier, very safe to hide
 Hide # %H3 $type->uniques $tier->hideable
@@ -2598,6 +2654,7 @@ Hide # %H3 $type->uniques $tier->hideable
 	SetTextColor 175 96 37 255
 	SetBorderColor 175 96 37 255
 	SetBackgroundColor 20 20 0 255
+	DisableDropSound True
 	
 Show # $type->uniques $tier->restex
 	Rarity Unique
